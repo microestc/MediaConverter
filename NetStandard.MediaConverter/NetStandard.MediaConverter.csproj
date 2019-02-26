@@ -3,19 +3,18 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
-    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <Copyright>microestc co.</Copyright>
     <PackageId>MediaConverter</PackageId>
-    <Authors>microestc</Authors>
-    <Company>microestc</Company>
-    <Version>1.2.1</Version>
+    <Authors>Microestc</Authors>
+    <Company>Microestc Co.</Company>
+    <Version>1.2.2</Version>
     <PackageReleaseNotes>media converter</PackageReleaseNotes>
+    <Product>MediaConverter</Product>
+    <PackageLicenseUrl>https://github.com/microestc/MediaConverter/blob/master/LICENSE</PackageLicenseUrl>
+    <RepositoryUrl>https://github.com/microestc/MediaConverter</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/microestc/MediaConverter</PackageProjectUrl>
+    <RepositoryType>github</RepositoryType>
   </PropertyGroup>
-
-  <ItemGroup>
-    <Reference Include="Microsoft.Extensions.Options">
-      <HintPath>..\..\..\..\..\..\Program Files\dotnet\sdk\NuGetFallbackFolder\microsoft.extensions.options\2.2.0\lib\netstandard2.0\Microsoft.Extensions.Options.dll</HintPath>
-    </Reference>
-  </ItemGroup>
 
 </Project>
