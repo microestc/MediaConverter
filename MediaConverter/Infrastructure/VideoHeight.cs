@@ -1,4 +1,4 @@
-namespace NetStandard.MediaConverter
+namespace MediaConverter
 {
     public enum VideoHeight
     {

@@ -1,7 +1,7 @@
 ﻿using System.IO;
 using System.Runtime.InteropServices;
 
-namespace NetStandard.MediaConverter
+namespace MediaConverter
 {
     public class EnvironmentConfig
     {

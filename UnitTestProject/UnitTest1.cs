@@ -1,7 +1,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using NetStandard.MediaConverter;
-using NetStandard.MediaConverter.Event;
+using MediaConverter.Event;
 using System.Threading.Tasks;
+using MediaConverter;
 
 namespace UnitTestProject
 {
@@ -14,9 +14,9 @@ namespace UnitTestProject
             var queue = new FFmpegQueue();
 
             var source = @"1.MOV";
-            var dest = @"1.mp4";
-          
-            var task = new FFMpegEncoderTask(new MediaEncodingSetup(source, dest, VideoHeight.P720));
+            var dest = @"1";
+
+            var task = new FFMpegEncoderTask(new MediaEncodingSetup(source, dest, ".mp4", VideoHeight.P720), new MediaEncodingTaskInfo("", "", ""));
             task.ConvertFinishedEvent += ConvertFinished;
             task.ConvertProgressEvent += ConvertProgress;
 
@@ -29,7 +29,8 @@ namespace UnitTestProject
             var e = args.ElapsedTime;
         }
 
-        protected void ConvertProgress(object sender, ConvertProgressEventArgs args) {
+        protected void ConvertProgress(object sender, ConvertProgressEventArgs args)
+        {
             if (args.IsCompleted)
             {
                 var duration = args.TotalDuration;

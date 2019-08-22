@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28516.95
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{25DB924C-BEA7-44DD-BB58-340E77A826F0}"
+	ProjectSection(SolutionItems) = preProject
+		.dockerignore = .dockerignore
+		global.json = global.json
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MediaConverter", "MediaConverter\MediaConverter.csproj", "{06F41278-5D14-47CA-9D9B-C5675F54496B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnitTestProject", "UnitTestProject\UnitTestProject.csproj", "{841A1562-7B68-471B-A7C2-CDD860313AA3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{06F41278-5D14-47CA-9D9B-C5675F54496B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06F41278-5D14-47CA-9D9B-C5675F54496B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06F41278-5D14-47CA-9D9B-C5675F54496B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06F41278-5D14-47CA-9D9B-C5675F54496B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{841A1562-7B68-471B-A7C2-CDD860313AA3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{841A1562-7B68-471B-A7C2-CDD860313AA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{841A1562-7B68-471B-A7C2-CDD860313AA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{841A1562-7B68-471B-A7C2-CDD860313AA3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {30233671-3362-48C3-B58E-25B4DE02C6EA}
+	EndGlobalSection
+EndGlobal

@@ -2,9 +2,9 @@ using System;
 using System.Diagnostics;
 using System.IO;
 using System.Reflection;
-using NetStandard.MediaConverter.Event;
+using MediaConverter.Event;
 
-namespace NetStandard.MediaConverter
+namespace MediaConverter
 {
     public class FFMpegEncoderTask
     {
@@ -59,15 +59,17 @@ namespace NetStandard.MediaConverter
 
         private void Start()
         {
-            var startInfo = new ProcessStartInfo();
-            startInfo.FileName = _environmentConfig.FFMpegExecutable;
-            startInfo.Arguments = _encodingSetup.GetCmdLineParams();
-            startInfo.WorkingDirectory = _workingDirectory;
-            startInfo.UseShellExecute = false;
-            startInfo.CreateNoWindow = true;
-            startInfo.RedirectStandardInput = true;
-            startInfo.RedirectStandardOutput = true;
-            startInfo.RedirectStandardError = true;
+            var startInfo = new ProcessStartInfo
+            {
+                FileName = _environmentConfig.FFMpegExecutable,
+                Arguments = _encodingSetup.GetCmdLineParams(),
+                WorkingDirectory = _workingDirectory,
+                UseShellExecute = false,
+                CreateNoWindow = true,
+                RedirectStandardInput = true,
+                RedirectStandardOutput = true,
+                RedirectStandardError = true
+            };
             using (var process = new Process())
             {
                 process.StartInfo = startInfo;

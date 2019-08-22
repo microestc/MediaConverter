@@ -2,15 +2,15 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using NetStandard.MediaConverter.Event;
+using MediaConverter.Event;
 
-namespace NetStandard.MediaConverter
+namespace MediaConverter
 {
     public class FFmpegQueue
     {
         private Queue<FFMpegEncoderTask> _tasks = new Queue<FFMpegEncoderTask>();
         private bool _isEnabled = true;
-        private object _lockObj = new object();
+        private readonly object _lockObj = new object();
         private int _queuedTasksCount;
         private int _completedTasksCount;
 

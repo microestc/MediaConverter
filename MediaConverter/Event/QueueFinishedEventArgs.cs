@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace NetStandard.MediaConverter.Event
+namespace MediaConverter.Event
 {
     public class QueueFinishedEventArgs : EventArgs
     {

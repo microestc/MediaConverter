@@ -1,16 +1,16 @@
 using System;
 using System.Text.RegularExpressions;
-using NetStandard.MediaConverter.Event;
+using MediaConverter.Event;
 
-namespace NetStandard.MediaConverter
+namespace MediaConverter
 {
     public class FFMpegProgress
     {
-        private static Regex _durationRegex = new Regex("Duration:\\s(?<Duration>[0-9:.]+)([,]|$)", RegexOptions.IgnoreCase | RegexOptions.Compiled | RegexOptions.Singleline);
-        private static Regex _progressRegex = new Regex("time=(?<progress>[0-9:.]+)\\s", RegexOptions.IgnoreCase | RegexOptions.Compiled | RegexOptions.Singleline);
+        private static readonly Regex _durationRegex = new Regex("Duration:\\s(?<Duration>[0-9:.]+)([,]|$)", RegexOptions.IgnoreCase | RegexOptions.Compiled | RegexOptions.Singleline);
+        private static readonly Regex _progressRegex = new Regex("time=(?<progress>[0-9:.]+)\\s", RegexOptions.IgnoreCase | RegexOptions.Compiled | RegexOptions.Singleline);
         private TimeSpan _totalDuration = TimeSpan.FromMilliseconds(1.0);
         private TimeSpan _progress = TimeSpan.FromMilliseconds(0.0);
-        private Action<ConvertProgressEventArgs> ProgressCallback;
+        private readonly Action<ConvertProgressEventArgs> ProgressCallback;
 
         public FFMpegProgress(Action<ConvertProgressEventArgs> progressCallback)
         {
