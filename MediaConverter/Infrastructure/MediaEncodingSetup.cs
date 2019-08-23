@@ -8,14 +8,14 @@ namespace MediaConverter
         public string Source { get; private set; }
 
         /// <summary>
-        /// 目标视频的绝对路径(不包含文件格式)
+        /// 目标视频的绝对路径
         /// </summary>
         public string Dest { get; private set; }
 
         /// <summary>
-        /// 目标视频的文件格式
+        /// 缩略图的绝对路径(不包含缩略图文件格式后缀.jpeg)
         /// </summary>
-        public string Format { get; private set; }
+        public string Thumb { get; private set; }
 
         public VideoHeight VideoHeight { get; private set; }
 
@@ -28,18 +28,18 @@ namespace MediaConverter
             NotEncoding = true;
         }
 
-        public MediaEncodingSetup(string source, string dest, string format, VideoHeight videoHeight)
+        public MediaEncodingSetup(string source, string dest, string thumb, VideoHeight videoHeight)
         {
             Source = source;
             Dest = dest;
-            Format = format;
+            Thumb = thumb;
             VideoHeight = videoHeight;
             NotEncoding = false;
         }
 
         internal string GetCmdLineParams()
         {
-            if (NotEncoding) return $"ffmpeg -y -loglevel info -i {Source} -vframes 1 -f mjpeg {Dest}.jpg";
+            if (NotEncoding) return $"ffmpeg -y -loglevel info -i {Source} -vframes 1 -f mjpeg {Thumb}.jpeg";
             string videoHeight = "240";
             switch (VideoHeight)
             {
@@ -56,7 +56,7 @@ namespace MediaConverter
                     videoHeight = "1080";
                     break;
             }
-            return $"-y -loglevel info -i {Source} -c:v libx264 -vf scale=\"trunc(oh * a / 2) * 2:{videoHeight}\" {Dest}{Format} -vframes 1 -f mjpeg {Dest}.jpg";
+            return $"-y -loglevel info -i {Source} -c:v libx264 -vf scale=\"trunc(oh * a / 2) * 2:{videoHeight}\" {Dest} -vframes 1 -f mjpeg {Thumb}.jpeg";
         }
 
     }
