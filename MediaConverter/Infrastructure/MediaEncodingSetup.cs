@@ -39,7 +39,7 @@ namespace MediaConverter
 
         internal string GetCmdLineParams()
         {
-            if (NotEncoding) return $"ffmpeg -y -loglevel info -i {Source} -vframes 1 -f mjpeg {Thumb}.jpeg";
+            if (NotEncoding) return $"-y -loglevel info -i {Source} -vframes 1 -f mjpeg {Thumb}.jpeg";
             string videoHeight = "240";
             switch (VideoHeight)
             {
