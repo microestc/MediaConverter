@@ -21,10 +21,10 @@ namespace MediaConverter
 
         public bool NotEncoding { get; private set; }
 
-        public MediaEncodingSetup(string source, string dest)
+        public MediaEncodingSetup(string source, string thumb)
         {
             Source = source;
-            Dest = dest;
+            Thumb = thumb;
             NotEncoding = true;
         }
 
